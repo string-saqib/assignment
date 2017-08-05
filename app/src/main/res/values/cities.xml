@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="city_list">
+        <item>---Select---</item>
+        <item>Aligarh</item>
+        <item>Lucknow</item>
+        <item>Delhi</item>
+        <item>Chennai</item>
+        <item>Noida</item>
+        <item>Mumbai</item>
+        <item>Bangalore</item>
+    </string-array>
+</resources>
