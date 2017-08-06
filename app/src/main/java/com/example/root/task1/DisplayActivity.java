@@ -13,29 +13,17 @@ import android.widget.TextView;
 public class DisplayActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private TextView mTextView;
     private Button edit_button;
+
     private static Bundle back_bundle;
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_display);
+        setContentView(R.layout.fragment_details);
 
-        bundle = this.getIntent().getExtras();
-
-        String username = bundle.getString("UserName");
-        String emailID = bundle.getString("E-mail");
-        String gender = bundle.getString("Gender");
-        String city = bundle.getString("City");
-
-        mTextView = (TextView) findViewById(R.id.user_text);
-        mTextView.setText(username);
-        mTextView.append("\n");
-        mTextView.append(emailID + "\n");
-        mTextView.append(gender);
-        if (!city.equals("---Select---"))
-            mTextView.append("\n" + city);
+        DisplayFragment details = new DisplayFragment();
+        details.setArguments(this.getIntent().getExtras());
 
         back_bundle = bundle;
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object

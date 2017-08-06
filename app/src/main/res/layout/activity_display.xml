@@ -8,11 +8,9 @@
         android:id="@+id/tool_bar"
         layout="@layout/tool_bar" />
 
-    <TextView
-        android:id="@+id/user_text"
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="top|center_horizontal"
-        android:maxLines="6" />
+        android:id="@id/fragment_details" />
 
 </LinearLayout>
