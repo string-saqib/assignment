@@ -1,5 +1,6 @@
 package com.example.root.task1;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -23,6 +24,7 @@ public class DisplayFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        backBundle = getArguments();
     }
 
     @Override
@@ -30,7 +32,6 @@ public class DisplayFragment extends Fragment {
                              Bundle savedInstanceState) {
         View inflatedView = inflater.inflate(R.layout.fragment_details, container, false);
 
-        backBundle = this.getArguments();
         if(backBundle != null) {
             String username = backBundle.getString("UserName");
             String emailID = backBundle.getString("E-mail");

@@ -2,6 +2,8 @@ package com.example.root.task1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -20,15 +22,15 @@ public class DisplayActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.activity_display);
 
+        infoBundle = getIntent().getExtras();
         DisplayFragment details = new DisplayFragment();
-        details.setArguments(getIntent().getExtras());
-        //getSupportFragmentManager().beginTransaction().commit();
+        details.setArguments(infoBundle);
+        getSupportFragmentManager().beginTransaction().add(android.R.id.content,details).commit();
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("DisplayScreen");
 
-        infoBundle = bundle;
         editButton = (Button) findViewById(R.id.edit_button);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,12 @@ public class DisplayActivity extends AppCompatActivity {
 
         });
     }
+
+    /*@Override
+    public void onButtonPressed(){
+        Fragment frg = getFragmentManager().findFragmentById(R.id.fragment_login);
+
+    }8*/
 
     public void onBackPressed() {
         super.onBackPressed();
