@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class DisplayFragment extends Fragment {
 
-    private static Bundle backBundle;
+    public static Bundle backBundle;
     private TextView mTextView;
     public DisplayFragment() {
     }
@@ -23,9 +23,6 @@ public class DisplayFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            backBundle = getArguments();
-        }
     }
 
     @Override
@@ -33,18 +30,21 @@ public class DisplayFragment extends Fragment {
                              Bundle savedInstanceState) {
         View inflatedView = inflater.inflate(R.layout.fragment_details, container, false);
 
-        String username = backBundle.getString("UserName");
-        String emailID = backBundle.getString("E-mail");
-        String gender = backBundle.getString("Gender");
-        String city = backBundle.getString("City");
+        backBundle = this.getArguments();
+        if(backBundle != null) {
+            String username = backBundle.getString("UserName");
+            String emailID = backBundle.getString("E-mail");
+            String gender = backBundle.getString("Gender");
+            String city = backBundle.getString("City");
 
-        mTextView = inflatedView.findViewById(R.id.user_text);
-        mTextView.setText(username);
-        mTextView.append("\n");
-        mTextView.append(emailID + "\n");
-        mTextView.append(gender);
-        if (!city.equals("---Select---"))
-            mTextView.append("\n" + city);
+            mTextView = inflatedView.findViewById(R.id.user_text);
+            mTextView.setText(username);
+            mTextView.append("\n");
+            mTextView.append(emailID + "\n");
+            mTextView.append(gender);
+            if (!city.equals("---Select---"))
+                mTextView.append("\n" + city);
+        }
         return inflatedView;
     }
 }

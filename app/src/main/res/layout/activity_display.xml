@@ -9,8 +9,9 @@
         layout="@layout/tool_bar" />
 
     <fragment
+        android:id="@+id/fragment_details"
+        android:name="com.example.root.task1.DisplayFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment_details" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

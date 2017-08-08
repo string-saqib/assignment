@@ -21,8 +21,8 @@ public class DisplayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display);
 
         DisplayFragment details = new DisplayFragment();
-        details.setArguments(this.getIntent().getExtras());
-        getSupportFragmentManager().beginTransaction().commit();
+        details.setArguments(getIntent().getExtras());
+        //getSupportFragmentManager().beginTransaction().commit();
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
