@@ -9,16 +9,15 @@
 
     </style>
 
-    <style name="CustomisedToolbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="RedText" parent="android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/text_size_huge</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

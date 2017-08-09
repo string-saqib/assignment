@@ -44,12 +44,6 @@ public class DisplayActivity extends AppCompatActivity {
         });
     }
 
-    /*@Override
-    public void onButtonPressed(){
-        Fragment frg = getFragmentManager().findFragmentById(R.id.fragment_login);
-
-    }8*/
-
     public void onBackPressed() {
         super.onBackPressed();
     }

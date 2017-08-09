@@ -12,11 +12,5 @@
         layout="@layout/normal_toolbar"
         />
 
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment_login"
-        android:name="com.example.root.task1.LoginFragment"/>
-
 </LinearLayout>
 

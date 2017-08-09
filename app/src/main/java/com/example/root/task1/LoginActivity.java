@@ -24,9 +24,4 @@ public class LoginActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(android.R.id.content, fragment).commit();
 
     }
-
-
-
-
-
 }

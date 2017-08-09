@@ -42,9 +42,7 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View inflatedView = inflater.inflate(R.layout.fragment_login, container, false);
-        Bundle b = getArguments();
 
         mUsernameView = inflatedView.findViewById(R.id.username);
         mEmailView = inflatedView.findViewById(R.id.email);
@@ -67,10 +65,10 @@ public class LoginFragment extends Fragment {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(dataAdapter);
 
-        if (b != null) {
-            mUsernameView.setText(b.getString("UserName"));
-            mEmailView.setText(b.getString("E-mail"));
-            mySpinner.setSelection(dataAdapter.getPosition(b.getString("City")));
+        if (getArguments()!= null) {
+            mUsernameView.setText(getArguments().getString("UserName"));
+            mEmailView.setText(getArguments().getString("E-mail"));
+            mySpinner.setSelection(dataAdapter.getPosition(getArguments().getString("City")));
             mButtonView.check(gender.equals("M") ? R.id.male : R.id.female);
         }
 
@@ -83,6 +81,7 @@ public class LoginFragment extends Fragment {
                     RadioButton checkedButton = getView().findViewById(checkedButtonId);
                     Intent i = new Intent(getActivity(), DisplayActivity.class);
                     Bundle b = new Bundle();
+
                     username = mUsernameView.getText().toString();
                     emailID = mEmailView.getText().toString();
                     gender = checkedButton.getText().toString();
